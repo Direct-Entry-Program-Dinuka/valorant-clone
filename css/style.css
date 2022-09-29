@@ -94,9 +94,6 @@ header > .col:last-child > div{
 /* Main Navigation */
 
 #nav-main{
-    /* position: relative;
-    top: 35%;
-    transform: translateY(-50%); */
     height: 100%;
 }
 
@@ -108,22 +105,42 @@ header > .col:last-child > div{
     letter-spacing: .08em;
     height: 100%;
 }
-#nav-main li a{
+
+#nav-main>li a{
+    display: block;
     border-radius: 6.4px;
     line-height: 15.6px;
     padding: 7.5px 16px;
     text-decoration: none;
-    color: #f9f9f9;
+    color: white;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-#nav-main li:hover{
+#nav-main>li:not(.submenu):hover a::after{
+    display: block;
+}
+
+#nav-main>li:not(.submenu) a::after{
+    display: none;
+    content: "";
+    position: absolute;
+    background-color: red;
+    width: 100%;
+    left: 0;
+    top: 40px;
+    height: 4px;
+    background-color: rgb(255, 70, 85);
+    border-radius: 2px 2px 0px 0px;
+}
+
+#nav-main li:hover a{
     background-color: rgba(128,128,128,0.3);
-    /* text-decoration: underline; */
 }
 
 #nav-main > li{
     float: left;
-
     margin-right: 4px;
 }
 
